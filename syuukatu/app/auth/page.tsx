@@ -11,7 +11,7 @@ export default function AuthPage() {
             アカウント作成・ログイン
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            開志専門職大学の学生専用プラットフォーム
+            〇〇大学の学生専用プラットフォーム
           </p>
         </div>
         
