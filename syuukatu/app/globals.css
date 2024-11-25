@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* スマートフォンでのタップターゲットサイズの最適化 */
+@layer base {
+  input,
+  select,
+  textarea,
+  button {
+    min-height: 44px; /* タップターゲットの最小サイズ */
+  }
+}
+
+/* フォントサイズの調整 */
+@layer utilities {
+  .text-responsive {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+}
+
+/* スクロールバーのカスタマイズ */
+@media (max-width: 640px) {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* モバイル向けのユーティリティクラス */
+@layer utilities {
+  .safe-padding-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-padding-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .mobile-padding {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+  }
+}
+
+/* カスタムスタイル */
+.form-input-touch {
+  @apply py-3 px-4;
+  min-height: 48px;
+}
+
+.button-touch {
+  @apply py-3 px-4;
+  min-height: 48px;
+}
+
+.card-mobile {
+  @apply rounded-lg shadow-sm overflow-hidden;
+  background-color: theme('colors.white');
+}
+
+.page-container-mobile {
+  @apply min-h-screen bg-gray-50 px-4 py-4 sm:py-8;
+}
